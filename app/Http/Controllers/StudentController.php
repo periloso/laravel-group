@@ -14,7 +14,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::all();
+        return $students;
     }
 
     /**
@@ -35,7 +36,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $student = Student::create($request->all());
+        return $student;
     }
 
     /**
@@ -69,7 +71,8 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+           $student->update ( $request->all());
+            return $student;
     }
 
     /**
@@ -80,6 +83,7 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        //
+        $student->delete();
+        return redirect()->back();
     }
 }
