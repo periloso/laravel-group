@@ -34,4 +34,5 @@
         </tbody>
     </table>
     <a href="/students/create" class="btn btn-info float-right">Aggiungi</a>
+    <a href="/students" class="btn btn-info float-left">Indietro</a>
 @endsection
