@@ -20,5 +20,5 @@ Route::get('/', function () {
 });
 
 // http://server/students
-#Route::resource('/students', 'StudentController');
+Route::resource('/students', 'StudentController');
 
