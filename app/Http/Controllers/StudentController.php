@@ -16,7 +16,6 @@ class StudentController extends Controller
     {
         $students = Student::all();
         return view('students', ['students' => $students]);
-        return $students;
     }
 
     /**
@@ -26,7 +25,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('students-create');
     }
 
     /**
@@ -37,8 +36,8 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $student = Student::create($request->all());
-        return $student;
+        Student::create($request->all());
+        return redirect('students');
     }
 
     /**
@@ -49,7 +48,9 @@ class StudentController extends Controller
      */
     public function show(Student $student)
     {
-        return $student;
+        return view('student', [
+            'student' => $student,
+        ]);
     }
 
     /**
@@ -60,7 +61,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        return $this->show($student);
     }
 
     /**
@@ -73,7 +74,7 @@ class StudentController extends Controller
     public function update(Request $request, Student $student)
     {
            $student->update ( $request->all());
-            return $student;
+            return redirect('students');
     }
 
     /**
