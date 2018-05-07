@@ -1,0 +1,19 @@
+ip: 10.98.124.124
+memory: 1024
+cpus: 1
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+folders:
+    -
+        map: .
+        to: /home/vagrant/code
+sites:
+    -
+        map: students.test
+        to: /home/vagrant/code/public
+databases:
+    - homestead
+name: students.test
+hostname: students.test
